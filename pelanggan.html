@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Pelanggan</title>
+
+  <!-- ICON -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- CSS UTAMA DASHBOARD -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- CSS KHUSUS PELANGGAN -->
+  <link rel="stylesheet" href="pelanggan.css">
+</head>
+<body>
+
+  <header class="header">
+        <div class="logo">
+            <img src="image/logo.png" alt="">
+            <h3>WHD Counter</h3>
+        </div>
+        <div class="pengaturan">
+            <ul>
+                <li><a href="#settings"><i class='bx  bx-cog'></i> </a></li>
+                <li class="notif-wrapper"><a href=""><i class='bx  bx-bell'></i> </a></li>
+                <li class="absen-wrapper">
+                <button id="absenBtn" class="absen-btn">ABSEN</button>
+                </li>            
+            </ul>
+        </div>   
+    </header>
+    <aside>
+        <nav class="sidebar">
+        <ul>
+            <li><a href="index.html"><i class='bx  bxs-dashboard'></i> </a></li>
+            <li><a href="input.html"><i class='bx  bx-notepad'></i> </a></li>
+            <li><a href="produk.html"><i class='bx  bx-package'></i> </a></li>
+            <li><a href="pelanggan.html"><i class='bx  bx-group'></i> </a></li>
+        </ul>
+        </nav>
+    </aside>
+
+  <!-- ===== CONTENT ===== -->
+  <div class="content pelanggan-page">
+
+    <div class="page-header">
+      <div>
+        <h2>Daftar Pelanggan</h2>
+        <p>Data pelanggan toko</p>
+      </div>
+
+      <button class="btn-primary">
+        <i class='bx bx-plus'></i> Tambah Pelanggan
+      </button>
+    </div>
+
+    <div class="pelanggan-table">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Pelanggan</th>
+            <th>No HP</th>
+            <th>Produk</th>
+            <th>Tanggal</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ahmad</td>
+            <td>081234567890</td>
+            <td>Pulsa 50K</td>
+            <td>21 Jan 2026</td>
+            <td class="action-btn">
+              <i class='bx bx-edit'></i>
+              <i class='bx bx-trash'></i>
+            </td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Siti</td>
+            <td>089876543210</td>
+            <td>Paket Data</td>
+            <td>21 Jan 2026</td>
+            <td class="action-btn">
+              <i class='bx bx-edit'></i>
+              <i class='bx bx-trash'></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+<script>
+  document.getElementById("absenBtn").onclick = function () {
+    window.location.href = "absen.html";
+  };
+</script>
+
+</body>
+</html>
