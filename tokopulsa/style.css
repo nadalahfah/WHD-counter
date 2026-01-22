@@ -1,0 +1,445 @@
+:root {
+  --first-color: rgb(238, 238, 238);
+  --second-bg-color: rgb(104, 109, 118);
+  --third-color: rgb(55, 58, 64);
+  --four-color: rgb(220, 95, 0);
+  --text-color: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--second-bg-color);
+  color: var(--text-color);
+}
+
+/* ===== HEADER ===== */
+.header {
+  width: 100%;
+  height: 60px;
+  background: var(--first-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* biar sejajar tengah secara vertikal */
+    gap: 10px;           /* jarak logo & teks */
+}
+
+.logo img {
+    width: 40px; /* atur sesuai kebutuhan */
+    height: auto;
+}
+
+/* ===== HEADER ICON ===== */
+.pengaturan ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 25px;
+}
+
+.pengaturan a {
+  cursor: pointer;
+  color: var(--four-color);
+}
+
+.pengaturan a:hover {
+  color: var(--four-color);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 60px;
+  height: calc(100vh - 60px);
+  background: var(--first-color);
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* HITBOX ICON */
+.sidebar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ICON */
+.sidebar i {
+  color: var(--four-color);
+  pointer-events: none;
+}
+
+.sidebar a:hover i {
+  color: var(--four-color);
+}
+
+/* ===== DASHBOARD CONTENT ===== */
+.dashboard {
+  margin-top: 80px;
+  margin-left: 80px;
+  padding: 20px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: var(--first-color);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card-header i {
+  font-size: 26px;
+  color: var(--four-color);
+}
+
+.card-header h3 {
+  margin: 0;
+}
+
+.card-header p {
+  font-size: 13px;
+  color: #555;
+}
+
+.card-empty {
+  text-align: center;
+  margin-top: 60px;
+  color: #666;
+}
+
+/* ===== FORM ===== */
+.form-pelanggan label {
+  font-weight: 600;
+  margin-top: 12px;
+  display: block;
+}
+
+.form-pelanggan input,
+.form-pelanggan textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-pelanggan textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-pelanggan button {
+  margin-top: 18px;
+  padding: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: var(--four-color);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-pelanggan button:hover {
+  opacity: 0.9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.content {
+  margin-top: 80px;     /* jarak dari header */
+  margin-left: 80px;   /* jarak dari sidebar */
+  padding: 30px;
+}
+
+/* Header halaman */
+.page-header h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+/* Search */
+.search-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.search-card input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+}
+
+/* Table */
+.table-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding-bottom: 12px;
+}
+
+td {
+  padding: 20px 0;
+  color: #777;
+}
+
+.empty td {
+  text-align: center;
+}
+
+.absen-page {
+  height: 100vh;
+  background: var(--second-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.absen-card {
+  background: var(--first-color);
+  padding: 32px;
+  border-radius: 16px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.absen-card h2 {
+  margin-bottom: 10px;
+}
+
+.absen-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.absen-card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 16px;
+}
+
+.absen-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: var(--four-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.absen-card button:hover {
+  opacity: 0.9;
+}
+
+/* CONTENT */
+.content {
+  margin-left: 80px;
+  margin-top: 80px;
+  padding: 24px;
+}
+
+/* PAGE HEADER */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  margin: 0;
+}
+
+.page-header p {
+  color: #555;
+  font-size: 14px;
+}
+
+/* ACTION */
+.page-action {
+  display: flex;
+  gap: 10px;
+}
+
+.page-action input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-primary {
+  background: var(--four-color);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* FILTER */
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.filter-tabs button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #eaeaea;
+  cursor: pointer;
+}
+
+.filter-tabs .active {
+  background: var(--four-color);
+  color: white;
+}
+
+/* TABLE */
+.table-wrapper {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  font-size: 14px;
+  color: #555;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.status.aktif {
+  background: #c8f7c5;
+  color: #2f7d32;
+}
+
+/* AKSI */
+.action-btn {
+  display: flex;
+  gap: 6px;
+}
+
+.action-btn i {
+  cursor: pointer;
+  color: var(--four-color);
+  font-size: 18px;
+}
+
+
+/* ===== BUTTON ABSEN ===== */
+.absen-btn {
+  background: var(--four-color);
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.absen-btn:hover {
+  opacity: 0.9;
+}
+
+.absen-btn:active {
+  transform: scale(0.97);
+}
+
